@@ -664,7 +664,7 @@ $.formwizard = {
                 .attr("id");
             let currentStep = $.formwizard.helper.currentIndex("#" + formId);
             let rowid = element.data("rowid");
-            let rowContainer = $("step-" + currentStep + " #row_" + rowid);
+            let rowContainer = $("#step-" + currentStep + " #row_" + rowid);
             let isLastRow = rowContainer.closest('.fields_container').find('.tabular-row').length == 1;
 
             rowContainer.find("textarea,input,select").each(function (index, element) {
