@@ -659,7 +659,7 @@ $.formwizard = {
             });
         },
         removeRow: element => {
-            let formId = $(e)
+            let formId = $(element)
                 .closest("form")
                 .attr("id");
             let currentStep = $.formwizard.helper.currentIndex("#" + formId);
