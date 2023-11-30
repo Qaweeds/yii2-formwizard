@@ -658,8 +658,13 @@ $.formwizard = {
                 rowIndex: currentIndex
             });
         },
-        removeRow: rowid => {
-            let rowContainer = $("#row_" + rowid);
+        removeRow: element => {
+            let formId = $(e)
+                .closest("form")
+                .attr("id");
+            let currentStep = $.formwizard.helper.currentIndex("#" + formId);
+            let rowid = element.data("rowid");
+            let rowContainer = $("step-" + currentStep + " #row_" + rowid);
             let isLastRow = rowContainer.closest('.fields_container').find('.tabular-row').length == 1;
 
             rowContainer.find("textarea,input,select").each(function (index, element) {
@@ -742,7 +747,7 @@ $.formwizard = {
 
         //bind remove row for tabular steps
         $(selector).on("click", ".remove-row", function (e) {
-            $.formwizard.tabular.removeRow($(this).data("rowid"));
+            $.formwizard.tabular.removeRow($(this));
         });
 
         //bind addRow for tabular step
