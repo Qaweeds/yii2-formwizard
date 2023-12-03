@@ -116,7 +116,7 @@ $.formwizard = {
                 setTimeout(
                     function () {
                         //fix for arrows navigation in edit mode.
-                        if ($(form).yiiActiveForm("data").attributes.length && $.formwizard.options[e.replace('#', '')].editMode) {
+                        if ($(form).yiiActiveForm("data").attributes.length && !$.formwizard.options[form.replace('#', '')].editMode) {
                             return $.formwizard.formValidation.run(form, e);
                         }
                         if ($(e.target).hasClass("formwizard_finish")) {
