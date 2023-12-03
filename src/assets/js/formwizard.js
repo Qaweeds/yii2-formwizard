@@ -568,7 +568,7 @@ $.formwizard = {
     tabular: {
         addRow: element => {
             let currentContainer = $(element).siblings(".fields_container");
-            let currentIndex = currentContainer.find(".tabular-row").length;
+            let currentIndex = parseInt(currentContainer.find(".tabular-row").last().prop('id').replace('row_', '')) + 1;
             let limitOver = currentIndex === currentContainer.data('rows-limit');
 
             //if row limit exceeded
