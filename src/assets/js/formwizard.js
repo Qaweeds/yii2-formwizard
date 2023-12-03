@@ -650,7 +650,7 @@ $.formwizard = {
             $(currentContainer)[0].appendChild(documentFragment);
 
             //update the remove button
-            let removeIcon = document.querySelector("#row_" + currentIndex + " i.remove-row");
+            let removeIcon = document.querySelector("#" + formId + " #step-" + currentStep + " #row_" + currentIndex + " i.remove-row");
             removeIcon.dataset.rowid = currentIndex;
 
             //trigger the afterInsert event 
