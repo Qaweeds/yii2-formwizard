@@ -17,6 +17,7 @@ $.formwizard = {
     previewEmptyText: '',
     options: [],
     submit: false,
+    canNext: true,
     helper: {
         showMessage: message => {
             alert(message);
@@ -122,7 +123,9 @@ $.formwizard = {
                         if ($(e.target).hasClass("formwizard_finish")) {
                             $(form).yiiActiveForm("submitForm");
                         }
-                        $.formwizard.formNavigation.next(e.target);
+                        if ($.formwizard.canNext) {
+                            $.formwizard.formNavigation.next(e.target);
+                        }
                     },
                     200
                 );
